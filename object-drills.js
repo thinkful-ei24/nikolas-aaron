@@ -145,7 +145,7 @@ for (let key in anotherOne) {
   console.log(`${key} ${anotherOne[key]}`);
 }
 
-dog.forEach(obj => console.log(`${obj.name} ${obj.jobTitle}`));
+// dog.forEach(obj => console.log(`${obj.name} ${obj.jobTitle}`));
 
 let hobbit = {
   meals: ["breakfast", "second breakfast", "elevenses", "lunch", "afternoon tea", "dinner", "supper"]
@@ -153,5 +153,29 @@ let hobbit = {
 
 console.log(hobbit.meals[3]);
 
-let dog = [{name: "Aaron", jobTitle: "Friend"},{name: "Will Smith", jobTitle: "Emotional Helper"},{name: "Aaron2", jobTitle: "Clone"}];
 
+
+
+
+let dog = [
+  {name: "Aaron", jobTitle: "Friend", boss: "Will Smith"},
+  {name: "Will Smith", jobTitle: "Owner"},
+  {name: "Aaron2", jobTitle: "Clone", boss: "Aaron"}
+];
+
+
+let myFunction = function whoIsTheBoss(arr) {
+  arr.forEach(obj => {
+    if (obj.jobTitle === "Owner") {
+      console.log(`${obj.jobTitle} ${obj.name} doesn't report to anybody`);
+      // return obj.jobTitle + obj.name + 'does not report to anybody';     // Why doesn't this work?
+    }
+    else {
+      console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}`);
+      // return `${obj.jobTitle} ${obj.name} reports to ${obj.boss}`;        Why doesn't this work?
+    }
+  });
+
+};
+
+console.log(myFunction(dog));
