@@ -90,3 +90,14 @@ function enrollInSummerSchool(students) {
   
 }
 console.log(enrollInSummerSchool(studentArray));
+
+
+
+
+const thisOne = function findByID(items, idNum) {
+  return items.find(obj => obj.id === idNum);
+}
+
+
+const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
+console.log(thisOne(data, 2));
