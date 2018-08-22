@@ -58,7 +58,35 @@ function keyDeleter(obj) {
 
 function makeStudentsReport(data) {
   let keyed = data.map(obj => {
-    return `${obj.name}: ${obj.grade}`
+    return `${obj.name}: ${obj.grade}`;
   });
   return keyed;
 }
+
+
+
+
+
+let studentArray = [
+  {
+    name: 'Tim',
+    status: 'Current student',
+    course: 'Biology'
+  },
+  {
+    name: 'Sue',
+    status: 'Withdrawn',
+    course: 'Mathematics'
+  }
+];
+
+function enrollInSummerSchool(students) {
+  let summerSchool = students.map(obj => ({
+    name: obj.name,
+    status: 'In summer school',
+    course: obj.course
+  }));
+  return summerSchool;
+  
+}
+console.log(enrollInSummerSchool(studentArray));
