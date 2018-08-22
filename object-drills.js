@@ -32,7 +32,7 @@ function personMaker() {
     lastName: 'Jones',
     // replace `null` with a function that uses self reference to return
     // full name
-    fullName: function() {
+    fullName: function () {
       return `${this.firstName} ${this.lastName}`;
     }
   };
@@ -87,7 +87,7 @@ function enrollInSummerSchool(students) {
     course: obj.course
   }));
   return summerSchool;
-  
+
 }
 console.log(enrollInSummerSchool(studentArray));
 
@@ -105,14 +105,42 @@ const thisOne = function findByID(items, idNum) {
 
 function validateKeys(object, expectedKeys) {
   let keyedObjectNames = Object.keys(object);
-  if(keyedObjectNames.length !== expectedKeys.length) {
+  if (keyedObjectNames.length !== expectedKeys.length) {
     return false;
   } else {
-    for(let i = 0; i < expectedKeys.length; i++) {
-      if(!keyedObjectNames.find(key => key === expectedKeys[i])) {
+    for (let i = 0; i < expectedKeys.length; i++) {
+      if (!keyedObjectNames.find(key => key === expectedKeys[i])) {
         return false;
-      } 
+      }
     }
     return true;
   }
+}
+
+
+const loaf = {
+  flour: 300,
+  water: 210,
+  hydration: function () {
+    return this.water / this.flour * 100;
+  }
+};
+
+console.log(loaf.flour, loaf.water, loaf.hydration());
+
+
+
+
+
+
+const anotherOne = {
+  foo: 12,
+  bar: 'a property',
+  fum: 20,
+  quux: 'another string',
+  spam: 'this is some spam'
+};
+
+for (let key in anotherOne) {
+  console.log(`${key} ${anotherOne[key]}`);
 }
