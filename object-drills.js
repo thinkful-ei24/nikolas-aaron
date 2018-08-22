@@ -2,11 +2,11 @@
 
 function createMyObject() {
   return {
-    foo: "bar",
+    foo: 'bar',
     answerToUniverse: 42,
-    "olly olly": "oxen free",
+    'olly olly': 'oxen free',
     sayHello: function () {
-      return "Hello"
+      return 'Hello';
     }
   };
 }
@@ -96,8 +96,23 @@ console.log(enrollInSummerSchool(studentArray));
 
 const thisOne = function findByID(items, idNum) {
   return items.find(obj => obj.id === idNum);
+};
+
+
+// const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
+// console.log(thisOne(data, 2));
+
+
+function validateKeys(object, expectedKeys) {
+  let keyedObjectNames = Object.keys(object);
+  if(keyedObjectNames.length !== expectedKeys.length) {
+    return false;
+  } else {
+    for(let i = 0; i < expectedKeys.length; i++) {
+      if(!keyedObjectNames.find(key => key === expectedKeys[i])) {
+        return false;
+      } 
+    }
+    return true;
+  }
 }
-
-
-const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
-console.log(thisOne(data, 2));
