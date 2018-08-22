@@ -158,9 +158,9 @@ console.log(hobbit.meals[3]);
 
 
 let dog = [
-  {name: "Aaron", jobTitle: "Friend", boss: "Will Smith"},
-  {name: "Will Smith", jobTitle: "Owner"},
-  {name: "Aaron2", jobTitle: "Clone", boss: "Aaron"}
+  { name: "Aaron", jobTitle: "Friend", boss: "Will Smith" },
+  { name: "Will Smith", jobTitle: "Owner" },
+  { name: "Aaron2", jobTitle: "Clone", boss: "Aaron" }
 ];
 
 
@@ -179,3 +179,36 @@ let myFunction = function whoIsTheBoss(arr) {
 };
 
 console.log(myFunction(dog));
+
+
+
+
+
+function decode(obj) {
+  let message = obj.message;
+  let newAr = message.split(" ")
+  let newAr2 = []
+  for (let i = 0; i < newAr.length; i++) {
+    if (newAr[i][0] === "a") {
+      newAr2.push(newAr[i][1]);
+    } else if (newAr[i][0] === "b") {
+      newAr2.push(newAr[i][2]);
+    } else if (newAr[i][0] === "c") {
+      newAr2.push(newAr[i][3]);
+    } else if (newAr[i][0] === "d") {
+      newAr2.push(newAr[i][4]);
+    } else {
+      newAr2.push(" ");
+    }
+  }
+  let boop = newAr2.join("");
+  return boop;
+}
+
+
+
+let objectCode = {
+  message: `craft block argon meter bells brown croon droop`
+}
+
+console.log(decode(objectCode));
