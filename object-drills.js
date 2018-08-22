@@ -53,3 +53,12 @@ function keyDeleter(obj) {
   delete obj.bar;
   return obj;
 }
+
+// 2nd Drills Object page
+
+function makeStudentsReport(data) {
+  let keyed = data.map(obj => {
+    return `${obj.name}: ${obj.grade}`
+  });
+  return keyed;
+}
